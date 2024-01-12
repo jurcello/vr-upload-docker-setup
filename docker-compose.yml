@@ -1,0 +1,16 @@
+version: '3'
+
+services:
+  web:
+    image: jurcello/vr-upload-files:0.0.1
+    ports:
+      - "8000:8000"
+    volumes:
+      - database:/databases/
+      - media:/media/
+    environment:
+      SECRET_KEY: "create-your-secret"
+      DJANGO_SETTINGS_MODULE: keezUpload.settings.local
+volumes:
+  database:
+  media:
